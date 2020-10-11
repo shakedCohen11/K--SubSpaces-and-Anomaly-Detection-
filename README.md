@@ -2,7 +2,7 @@
 The repository contains part of my project for the course:
 Selected Topics in Images Processing, [Prof. Stanley Rotman](http://www.ee.bgu.ac.il/~srotman/)
 
-cool image
+![cool image](segmented%20image.jpg)
 
 The goal of the project is to implement the k-SubSpaces algorithm, use it as a pre-processing tool for anomaly detection (primarily the RX algorithm) in hyperspecteral images, 
 and compare it to k-means algorithm as a pre-processing tool for anomaly detection.  

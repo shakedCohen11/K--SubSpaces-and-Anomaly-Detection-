@@ -4,23 +4,23 @@ Selected Topics in Images Processing, [Prof. Stanley Rotman](http://www.ee.bgu.a
 
 cool image
 
-The goal of the project is to implement the k-SubSpaces algorithm, use it as a pre-processing tool for to anomaly detection (primarily the RX algorithm) in hyperspecteral images, 
-and compare it to k-means algorithm as a pre-processing tool for to anomaly detection.  
+The goal of the project is to implement the k-SubSpaces algorithm, use it as a pre-processing tool for anomaly detection (primarily the RX algorithm) in hyperspecteral images, 
+and compare it to k-means algorithm as a pre-processing tool for anomaly detection.  
 
 The diffrence between the 2 algorithms is in the use of high dimentinal data.
 
 ## Spoiler
 
-We created new approaches for how to use the segmented image created by the algorithm for anomaly detection with the RX algorithm as the base:
+We created new approaches for using the segmented image created by the algorithm for anomaly detection with the RX algorithm as the base:
 
 We created 2 different approaches for applying the RX algorithm on the segmented data:  
 
-1. The direct cluster approach - applying RX algorithm on each cluster independently using the cluster mean and covariance.
+ 1. The direct cluster approach - applying RX algorithm on each cluster independently using the cluster mean and covariance.
    ∀𝑥∈𝑆⊆𝑋 , 𝑟(𝑥)=(𝑥−𝑚_𝑠 )^𝑇 𝜙_𝑆^(−1) (𝑥−𝑚_𝑠 )    
    Where X is the hyperspectral image, S is the cluster (associated with the subspace), 𝑚_𝑠 is the cluster mean, and 𝜙_𝑆^(−1) is the inverse covariance matrix of the cluster.
 
-2. The indirect cluster approach - applying RX algorithm on each cluster independently using the original mean of the image and the local clusters covariance.
-   ∀𝑥∈𝑆⊆𝑋 , 𝑅𝑋(𝑥)=(𝑥−𝑚_𝑥 )^𝑇 𝜙_𝑆^(−1) (𝑥−𝑚_𝑥 )    
+ 2. The indirect cluster approach - applying RX algorithm on each cluster independently using the original mean of the image and the local clusters covariance.         
+   ![code](https://latex.codecogs.com/gif.latex?%5Cforall%20x%20%5Cin%20S%20%5Csubseteq%20X%20%2C%20%5Cquad%20r%28x%29%3D%28x-m_s%29%5ET%20%5CPhi_S%5E%7B-1%7D%20%28x-m_s%29)   
    Where 𝑋 is the hyperspectral image, 𝑆 is the cluster (associated with the subspace), 𝑚_𝑥 is the neighbors mean, and 𝜙_𝑆^(−1) is the inverse covariance matrix of the cluster
 
 We created 2 different approaches for normalizing the RX score acording to the segmented data:
@@ -33,7 +33,7 @@ Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the normalized score
 Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the image scores are: 𝑅_𝑖𝑚𝑎𝑔𝑒=⋃_𝑆(𝑅_𝑆)  and the normalized scores are: 
 𝑅_(𝑖𝑚𝑎𝑔𝑒−𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧𝑒𝑑)=  (𝑅_𝑖𝑚𝑎𝑔𝑒−min (𝑅_𝑖𝑚𝑎𝑔𝑒))/(max (𝑅_𝑖𝑚𝑎𝑔𝑒)−min (𝑅_𝑖𝑚𝑎𝑔𝑒))
 
-![code](https://latex.codecogs.com/gif.latex?%5Cforall%20x%20%5Cin%20S%20%5Csubseteq%20X%20%2C%20%5Cquad%20r%28x%29%3D%28x-m_s%29%5ET%20%5CPhi_S%5E%7B-1%7D%20%28x-m_s%29)
+
 
 ## Repo Usage
 This project was mostly based on implementing the K-SubSpaces algorithm, running multiple experiments and performing exploratory data analysis. 

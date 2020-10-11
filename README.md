@@ -26,12 +26,13 @@ We created 2 different approaches for applying the RX algorithm on the segmented
 We created 2 different approaches for normalizing the RX score acording to the segmented data:
 
 1. Cluster Normalization: normalizing the RX scores according to each cluster separately, this allows for a bigger dynamic range.
-Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the normalized scores are: 𝑅_(𝑠−𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧𝑒𝑑)=  (𝑅_𝑠−min (𝑅_𝑠))/(max (𝑅_𝑠)−min (𝑅_𝑠)) and the scores of the whole image is:		
-𝑅_𝑖𝑚𝑎𝑔𝑒=⋃_𝑆(𝑅_(𝑆−𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧𝑒𝑑)) 
+   Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the normalized scores are:                                                                                                    
+    ![code](https://latex.codecogs.com/gif.latex?R_%7Bs-normalized%7D%3D%5Cfrac%7BR_s%20-%20min%28R_s%29%29%7D%7Bmax%28R_s%29-min%28R_s%29%7D)                                        and the scores of the whole image is:		                                                                                                                                      
+    ![code](https://latex.codecogs.com/gif.latex?R_%7Bimage%7D%3D%5Ccup_s%20R_%7Bs-normalized%7D) 
 
 2. Whole data Normalization: normalizing the RX scores according to the whole of the data, this allows for getting stronger anomalies only.
-Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the image scores are: 𝑅_𝑖𝑚𝑎𝑔𝑒=⋃_𝑆(𝑅_𝑆)  and the normalized scores are: 
-𝑅_(𝑖𝑚𝑎𝑔𝑒−𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧𝑒𝑑)=  (𝑅_𝑖𝑚𝑎𝑔𝑒−min (𝑅_𝑖𝑚𝑎𝑔𝑒))/(max (𝑅_𝑖𝑚𝑎𝑔𝑒)−min (𝑅_𝑖𝑚𝑎𝑔𝑒))
+Let’s represent the cluster 𝑆 scores as 𝑅_𝑠 then the image scores are:                                                                                                           ![code](https://latex.codecogs.com/gif.latex?R_%7Bimage%7D%3D%5Ccup_s%20R_%7Bs%7D)                                                                                             and the normalized scores are:                                                          
+![code](https://latex.codecogs.com/gif.latex?R_%7Bimage-normalized%7D%3D%5Cfrac%7BR_%7Bimage%7D%20-%20min%28R_%7Bimage%7D%29%29%7D%7Bmax%28R_%7Bimage%7D%29-min%28R_%7Bimage%7D%29%7D)
 
 
 

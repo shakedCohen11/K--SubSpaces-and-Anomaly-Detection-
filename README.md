@@ -16,11 +16,11 @@ We created new approaches for using the segmented image created by the algorithm
 We created 2 different approaches for applying the RX algorithm on the segmented data:  
 
  1. The direct cluster approach - applying RX algorithm on each cluster independently using the cluster mean and covariance.
-   ∀𝑥∈𝑆⊆𝑋 , 𝑟(𝑥)=(𝑥−𝑚_𝑠 )^𝑇 𝜙_𝑆^(−1) (𝑥−𝑚_𝑠 )    
+    ![code](https://latex.codecogs.com/gif.latex?%5Cforall%20x%20%5Cin%20S%20%5Csubseteq%20X%20%2C%20%5Cquad%20r%28x%29%3D%28x-m_s%29%5ET%20%5CPhi_S%5E%7B-1%7D%20%28x-m_s%29)    
    Where X is the hyperspectral image, S is the cluster (associated with the subspace), 𝑚_𝑠 is the cluster mean, and 𝜙_𝑆^(−1) is the inverse covariance matrix of the cluster.
 
  2. The indirect cluster approach - applying RX algorithm on each cluster independently using the original mean of the image and the local clusters covariance.         
-   ![code](https://latex.codecogs.com/gif.latex?%5Cforall%20x%20%5Cin%20S%20%5Csubseteq%20X%20%2C%20%5Cquad%20r%28x%29%3D%28x-m_s%29%5ET%20%5CPhi_S%5E%7B-1%7D%20%28x-m_s%29)   
+   ![code](https://latex.codecogs.com/gif.latex?%5Cforall%20x%20%5Cin%20S%20%5Csubseteq%20X%20%2C%20%5Cquad%20r%28x%29%3D%28x-m_x%29%5ET%20%5CPhi_S%5E%7B-1%7D%20%28x-m_x%29)   
    Where 𝑋 is the hyperspectral image, 𝑆 is the cluster (associated with the subspace), 𝑚_𝑥 is the neighbors mean, and 𝜙_𝑆^(−1) is the inverse covariance matrix of the cluster
 
 We created 2 different approaches for normalizing the RX score acording to the segmented data:
